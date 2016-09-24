@@ -407,7 +407,7 @@ parseexec(char **ps, char *es)
 
   argc = 0;
   ret = parseredirs(ret, ps, es);
-  while(!peek(ps, es, "|&;")){
+  while(!peek(ps, es, "|&;")){ // Add two posible token ";" and "&";
     if((tok=gettoken(ps, es, &q, &eq)) == 0)
       break;
     if(tok != 'a') {
